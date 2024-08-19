@@ -12,7 +12,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class ViewProductComponent implements OnInit {
   faChevronDown = faChevronDown;
-  productId: string = '';
+  productId: string = '1';
   productData!: Product;
   productQuantity: number = 1;
 
@@ -27,6 +27,7 @@ export class ViewProductComponent implements OnInit {
     this.route.params
       .subscribe(({id}) => {
         this.productId = id;
+        console.log('Product ID:', id); // Log the ID to verify it's correct
         this.data = this.productId;
         this.shop.viewProduct(id)
           .subscribe( item => {

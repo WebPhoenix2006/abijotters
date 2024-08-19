@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { Product } from 'src/app/shop/interfaces/Products';
+import { ShopService } from 'src/app/shop/services/shop.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,20 @@ import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons
 export class HomeComponent implements OnInit {
   faChevronRight = faChevronRight;
   faChevronLeft = faChevronLeft;
+  products: Product[] = [];
 
-  constructor() { }
+
+  constructor(private shop: ShopService) {
+
+  }
 
   ngOnInit(): void {
+    this.shop.getAllProducts()
+      .subscribe(data => {
+        const coffe = data.filter(item => item.type === 'Notebook' || item.type === 'Filter');
+        this.products = coffe;
+        this.products.splice(0, 3);
+      })
   }
 
   scrollDown() {

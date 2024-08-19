@@ -1,39 +1,44 @@
-const express = require('express');
-const cors = require('cors');
-const bodyparser = require('body-parser');
+const express = require("express");
+const cors = require("cors");
+const bodyparser = require("body-parser");
+const Paystack = require("paystack")(
+  "sk_test_c56e3275b3ed7d76c31b6ab408df873cb1ba5dab"
+); // Use your Paystack secret key
 
 const app = express();
-app.use(express.static('public'));
+app.use(express.static("public"));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(cors({ origin: true, credentials: true }));
 
-const stripe = require('stripe')('sk_test_51MLDvqD85DBZk3caDAEyWBkTi3Zmn5lk0ZiZPJ0bjvnZFSntR7tPg4NdNodpMY49RERGeUaRzhXqCJ9grgpQ5OWn00TJQpgoVY');
-const successUrl = "https://koffeeshop.netlify.app/success.html";
-const cancelUrl = "https://koffeeshop.netlify.app/cancel.html";
+// Paystack endpoint for initializing payment
+app.post("/create-payment", async (req, res) => {
+  const { amount, email } = req.body;
 
-app.post('/checkout', async (req, res, next) => {
-	try {
-				const session = await stripe.checkout.sessions.create({
-					mode: 'payment',
-					line_items: req.body.items.map((item) => ({
-						price_data: {
-							currency: 'usd',
-							product_data: {
-								name: item.name,
-								images: [item.image.regular]
-							},
-							unit_amount: item.price * 100,
-						},
-						quantity: 1,
-					})),
-						success_url: successUrl,
-						cancel_url: cancelUrl,
-			});
-			res.status(200).json(session);
-	} catch (error) {
-			next(error);
-	}
-})
+  try {
+    const response = await API.initializeTransaction({
+      email: email,
+      amount: amount * 100, // Convert Naira to kobo
+      callback_url: "http://localhost:4200/", // Replace with your frontend URL
+      reference: `ref-${Math.floor(Math.random() * 1000000000 + 1)}`, // Unique transaction reference
+    });
 
-app.listen(4242, () => console.log('app is running on 4242'));
+    if (response.status) {
+      res.status(200).json({ status: "success", data: response.data });
+    } else {
+      res
+        .status(400)
+        .json({ status: "error", message: "Payment initialization failed" });
+    }
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        status: "error",
+        message: "An error occurred",
+        error: error.message,
+      });
+  }
+});
+
+app.listen(4242, () => console.log("Server running on port 4242"));

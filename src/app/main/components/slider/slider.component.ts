@@ -20,7 +20,7 @@ export class SliderComponent implements OnInit {
   ngOnInit(): void {
     this.shop.getAllProducts()
       .subscribe(data => {
-        const coffe = data.filter(item => item.type === 'Espresso' || item.type === 'Filter');
+        const coffe = data.filter(item => item.type === 'Notebook' || item.type === 'Filter');
         this.products = coffe;
         this.products.splice(0, 3);
       })

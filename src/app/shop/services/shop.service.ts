@@ -7,7 +7,7 @@ import { Product } from '../interfaces/Products';
   providedIn: 'root'
 })
 export class ShopService {
-  baseUrl: string = 'https://63adf9413e4651691668807c.mockapi.io/products/';
+  baseUrl: string = 'https://66c3342dd057009ee9bf6ae9.mockapi.io/abijotters/products/';
   productId: string = '';  // Product ID holder for Header Style change
 
   constructor(private http: HttpClient) {}

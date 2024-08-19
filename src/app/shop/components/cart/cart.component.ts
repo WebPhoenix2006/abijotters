@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { loadStripe } from '@stripe/stripe-js';
 import { Product } from '../../interfaces/Products';
 import { CartService } from '../../services/cart.service';
 import { ShopService } from '../../services/shop.service';
@@ -11,16 +10,18 @@ import { ShopService } from '../../services/shop.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cartProducts: Product[] = [];
 
+  cartProducts: Product[] = []; // Array to store cart items
+  email: string = ''; // Email address for payment
 
   constructor(
     private http: HttpClient, 
     public shop: ShopService, 
-    public cart: CartService) {}
+    public cart: CartService
+  ) {}
 
   ngOnInit(): void {
-    this.cartProducts = this.cart.cartProducts
+    this.cartProducts = this.cart.cartProducts;
   }
 
   getTotal(): number {
@@ -32,16 +33,27 @@ export class CartComponent implements OnInit {
   }
 
   onCheckout() {
-    this.http.post('http://localhost:4242/checkout', {
-      items: this.cartProducts
-    }).subscribe(async (res: any)=> {
-      let stripe = await loadStripe('pk_test_51MLDvqD85DBZk3ca65FnykIMQ7VjtsBNvnrK0MFqf3el3yDlqLqoAJUhQH7JQYTie2r3MgYsbsNsbbthq7KnpRVI00vibB8bgT');
-      stripe?.redirectToCheckout({
-        sessionId: res.id
-      });
-      this.cartProducts = [];
-      localStorage.clear();
-    })
-  }
+    if (!this.email) {
+      console.error('Email is required');
+      return;
+    }
 
+    // Calculate the total amount in kobo (assuming amount is in Naira and converting to kobo)
+    const totalAmount = this.getTotal(); // Amount in Naira
+
+    // Send payment request to backend
+    this.http.post('http://localhost:4242/create-payment', {
+      amount: totalAmount,
+      email: this.email
+    }).subscribe((res: any) => {
+      if (res.status === 'success') {
+        const paymentUrl = res.data.authorization_url;
+        window.location.href = paymentUrl; // Redirect to Paystack's checkout page
+      } else {
+        console.error('Payment initialization error', res);
+      }
+    }, error => {
+      console.error('Payment initialization error', error);
+    });
+  }
 }
