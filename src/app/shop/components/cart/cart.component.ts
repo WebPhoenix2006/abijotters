@@ -43,10 +43,10 @@ export class CartComponent implements OnInit {
 
     // Send payment request to backend
     this.http.post('http://localhost:4242/create-payment', {
-      amount: totalAmount,
+      amount: Math.floor(totalAmount * 100),
       email: this.email
     }).subscribe((res: any) => {
-      if (res.status === 'success') {
+      if (res.status === true) {
         const paymentUrl = res.data.authorization_url;
         window.location.href = paymentUrl; // Redirect to Paystack's checkout page
       } else {

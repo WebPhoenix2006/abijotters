@@ -13,14 +13,13 @@ app.use(express.static("public"));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(cors({ origin: true, credentials: true }));
-app.use(errorHandler)
 
 // Paystack endpoint for initializing payment
 app.post("/create-payment", async (req, res) => {
     if (req.body.amount == null) throw new HandlerError("Missing `amount` field")
-    if (isAboveZero(req.body.amount)) throw new HandlerError("`amount` must be a number greater than 0")
+    if (!isAboveZero(req.body.amount)) throw new HandlerError("`amount` must be a number greater than 0")
     
-    if (!req.body.email) throw new HandlerError("Missing `email` field")
+    if (!req.body.email) throw new HandlerError("Missing `email` field!")
 
     const { amount, email } = req.body;
     
@@ -66,6 +65,7 @@ app.post("/create-payment/:id", async (req, res) => {
 
     res.json(response)
 });
+app.use(errorHandler)
 
 app.listen(4242, () => console.log("Server running on port 4242"));
 
@@ -79,10 +79,11 @@ function errorHandler(err, req, res, next) {
 
     if (err instanceof PaystackError) {
         res.status(500).send({
-            message: "An error occurred in one of our third-party providers"
+            message: err.message
         })
     }
     res.status(500).send({
-        message: "An unknown error occurred"
+        message: err.message
     })
+    next(err)
 }

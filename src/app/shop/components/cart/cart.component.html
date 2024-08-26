@@ -41,7 +41,7 @@
     <div class="cart-subtotal">
       <div class="subtotal-info">
         <h3>Subtotal</h3>
-        <p class="subtotal">{{ this.getTotal() | currency : "NGN" }}</p>
+        <p class="subtotal">{{ this.getTotal() | currency : "USD" }}</p>
       </div>
     </div>
     <form (ngSubmit)="onCheckout()" #checkoutForm="ngForm">

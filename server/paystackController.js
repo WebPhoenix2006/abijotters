@@ -20,6 +20,7 @@ class PaystackController {
                 email: email,
                 amount: amount,
             }),
+            method:'POST',
             headers: {
                 "Authorization": `Bearer ${process.env.PAYSTACK_SECRET}`,
                 "Content-Type": "application/json"
