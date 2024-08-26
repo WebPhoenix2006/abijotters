@@ -29,7 +29,7 @@
 
 #hero .bg-layer {
   background-color: #ffe53b;
-  background-image: linear-gradient(45deg, #ffe53b 0%, #ff2525 74%);
+  background-image: linear-gradient(215deg, #ffe53b 0%, #ff2525 74%);
 }
 
 .scroll-down {
@@ -217,7 +217,7 @@
 
   #hero .bg-layer {
     background-color: #ffe53b;
-    background-image: linear-gradient(45deg, #ffe53b 0%, #ff2525 74%);
+    background-image: linear-gradient(215deg, #ffe53b 0%, #ff2525 74%);
   }
 
   #hero .item__img-wrap .item__img--t1 {
