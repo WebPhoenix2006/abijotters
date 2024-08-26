@@ -22,7 +22,7 @@ class PaystackController {
             }),
             method:'POST',
             headers: {
-                "Authorization": `Bearer ${process.env.PAYSTACK_SECRET}`,
+                "Authorization": `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
                 "Content-Type": "application/json"
             }
         })

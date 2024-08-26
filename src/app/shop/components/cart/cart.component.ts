@@ -42,7 +42,7 @@ export class CartComponent implements OnInit {
     const totalAmount = this.getTotal(); // Amount in Naira
 
     // Send payment request to backend
-    this.http.post('http://localhost:4242/create-payment', {
+    this.http.post('https://abijotters-backend.vercel.app/create-payment', {
       amount: Math.floor(totalAmount * 100),
       email: this.email
     }).subscribe((res: any) => {

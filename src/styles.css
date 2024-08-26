@@ -2,15 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Oswald:wght@400;500;600;700&display=swap");
 /* @import url('~bootstrap/dist/css/bootstrap.min.css'); */
 :root {
-	--clr-dark-blue: #0E1317;
-	--clr-dark: #090C0F;
+	--clr-dark-blue: #4158D0;
+	--clr-dark: #C850C0;
 	--clr-darker: #040607;
 	--clr-white: #FFFFFF;
 	--clr-grey: #ebebeb;
 	--clr-light-grey: #FFFDF9;
 	--clr-dark-grey: #adadad;
-	--clr-orange-accent: #f5923c;
-	--clr-dark-orange-accent: #e38431;
+	--clr-orange-accent: #ffa600;
+	--clr-dark-orange-accent: #FFA901;
 
 
 	--ff-body: 'Nunito Sans', sans-serif;

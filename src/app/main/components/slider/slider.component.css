@@ -13,14 +13,11 @@
 
 .product-card {
 	padding: 2rem 2rem 1rem 2rem;
-	background: var(--clr-dark-blue);
+	background: transparent;
   	cursor: pointer;
 }
 
-.product-card:hover {
-	background: #131a20;
-	transition: background ease 0.2s;
-}
+
 
 .product-card figure {
   	width: 300px;

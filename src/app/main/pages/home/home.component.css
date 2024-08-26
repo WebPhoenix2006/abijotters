@@ -28,13 +28,14 @@
 }
 
 #hero .bg-layer {
-  	background: linear-gradient(to right, rgba(0, 0, 0, 0.9294117647), rgba(0, 0, 0, 0));
-}
+	background-color: #4158D0;
+	background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+	}
 
 
-.item__img-wrap .item__img--t1 {
+/* .item__img-wrap .item__img--t1 {
   	--image: url(../../../../assets/images/started_img_n6-min.jpg);
-}
+} */
 
 .scroll-down {
 	position: absolute;
@@ -220,8 +221,9 @@
     }
 
     #hero .bg-layer {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.517), rgba(0, 0, 0, 0));
-    }
+		background-color: #4158D0;
+		background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+			}
 
     #hero .item__img-wrap .item__img--t1 {
     --overflow: 0px;
