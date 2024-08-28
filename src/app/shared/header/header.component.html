@@ -21,7 +21,7 @@
         </nav>
         <div class="nav-btn-container">
             <button (click)="this.cart.toggleCart()" class="btn cart-btn">
-                <fa-icon [icon]="faShoppingbag"></fa-icon>
+                <fa-icon [icon]="faShoppingCart"></fa-icon>
                 <p class="quantity text-light">
                     <span *ngIf="this.cart.cartQuantity >= 1; else empty">{{ this.cart.cartQuantity }}</span>
                     <ng-template #empty>
@@ -29,7 +29,7 @@
                     </ng-template>
                 </p>
             </button>
-            <fa-icon [icon]="faUser" class="btn"></fa-icon>
+            <!-- <fa-icon [icon]="faUser" class="btn"></fa-icon> -->
         </div>
         <!-- Mobile Navbar Toggle -->
         <div class="nav-toggle" aria-label="menu" (click)="toggleNav()">

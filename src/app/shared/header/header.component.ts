@@ -1,5 +1,5 @@
 import { Component, Input, OnInit} from '@angular/core';
-import { faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from 'src/app/shop/services/cart.service';
 import { ShopService } from 'src/app/shop/services/shop.service';
 import { SharedService } from '../services/shared.service';
@@ -11,7 +11,7 @@ import { SharedService } from '../services/shared.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  faShoppingbag = faShoppingBag;
+  faShoppingCart = faShoppingCart;
   faUser = faUser;
   quantity: number = 0;
   // Properties for header style toggle based on url
