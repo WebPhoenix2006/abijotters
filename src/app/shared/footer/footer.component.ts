@@ -16,6 +16,8 @@ export class FooterComponent implements OnInit {
   faInstagram = faInstagram;
   faTiktok = faTiktok;
   faTwitter = faTwitter;
+  today: number = Date.now();
+
 
   constructor() { }
 
