@@ -1,42 +1,48 @@
-<header id="main-header" [ngClass]="{'nav-dark': headerView }">
-    <div id="top-navbar" class="row section-wrapper">
-        <figure class="logo-container col">
-            <img 
-                *ngIf="headerView; else lightLogo"
-                routerLink="" 
-                src="../../../assets/logo/logo.png" 
-                alt="Koffee Logo" 
-                class="logo">
-            <ng-template #lightLogo>
-                <img
-                    routerLink="" 
-                    src="../../../assets/logo/logo.png" 
-                    alt="Koffee Logo" 
-                    class="logo">
-            </ng-template>
-        </figure>
-        <!-- Desktop Navbar-->
-        <nav id="main-navigation" class="col">
-            <app-main-navbar [headerDark]="headerDark"></app-main-navbar>
-        </nav>
-        <div class="nav-btn-container">
-            <button (click)="this.cart.toggleCart()" class="btn cart-btn">
-                <fa-icon [icon]="faShoppingCart"></fa-icon>
-                <p class="quantity text-light">
-                    <span *ngIf="this.cart.cartQuantity >= 1; else empty">{{ this.cart.cartQuantity }}</span>
-                    <ng-template #empty>
-                        <span>0</span>
-                    </ng-template>
-                </p>
-            </button>
-            <!-- <fa-icon [icon]="faUser" class="btn"></fa-icon> -->
-        </div>
-        <!-- Mobile Navbar Toggle -->
-        <div class="nav-toggle" aria-label="menu" (click)="toggleNav()">
-            <div class="bar" [ngClass]="{'nav-dark': headerView}"></div>
-            <div class="bar" [ngClass]="{'nav-dark': headerView}"></div>
-        </div>
-        <!-- Mobile Navbar -->
-        <app-mobile-navbar></app-mobile-navbar>
+<header id="main-header" [ngClass]="{ 'nav-dark': headerView }">
+  <div id="top-navbar" class="row section-wrapper">
+    <figure class="logo-container col">
+      <img
+        loading="lazy"
+        *ngIf="headerView; else lightLogo"
+        routerLink=""
+        src="../../../assets/logo/logo.png"
+        alt="Koffee Logo"
+        class="logo"
+      />
+      <ng-template #lightLogo>
+        <img
+          loading="lazy"
+          routerLink=""
+          src="../../../assets/logo/logo.png"
+          alt="Koffee Logo"
+          class="logo"
+        />
+      </ng-template>
+    </figure>
+    <!-- Desktop Navbar-->
+    <nav id="main-navigation" class="col">
+      <app-main-navbar [headerDark]="headerDark"></app-main-navbar>
+    </nav>
+    <div class="nav-btn-container">
+      <button (click)="this.cart.toggleCart()" class="btn cart-btn">
+        <fa-icon [icon]="faShoppingCart"></fa-icon>
+        <p class="quantity text-light">
+          <span *ngIf="this.cart.cartQuantity >= 1; else empty">{{
+            this.cart.cartQuantity
+          }}</span>
+          <ng-template #empty>
+            <span>0</span>
+          </ng-template>
+        </p>
+      </button>
+      <!-- <fa-icon [icon]="faUser" class="btn"></fa-icon> -->
     </div>
+    <!-- Mobile Navbar Toggle -->
+    <div class="nav-toggle" aria-label="menu" (click)="toggleNav()">
+      <div class="bar" [ngClass]="{ 'nav-dark': headerView }"></div>
+      <div class="bar" [ngClass]="{ 'nav-dark': headerView }"></div>
+    </div>
+    <!-- Mobile Navbar -->
+    <app-mobile-navbar></app-mobile-navbar>
+  </div>
 </header>
