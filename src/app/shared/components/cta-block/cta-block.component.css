@@ -79,7 +79,7 @@
 
 #cta-block .item__img--t2 {
 	--overflow: 60px;
-	--image: url(../../../../assets/images/8-min.png);
+	background-color: var(--clr-orange-accent);
 }
 
 #cta-block .item .item__img-wrap {
