@@ -22,7 +22,7 @@
             <figcaption class="item-details">
               <h3>{{ item.name }}</h3>
               <p>{{ item.type }}</p>
-              <p class="text-accent price">{{ item.price | currency }}</p>
+              <p class="text-accent price">{{ item.price | currency: "NGN":"symbol" }}</p>
             </figcaption>
           </figure>
           <div class="btn-container">
@@ -41,7 +41,7 @@
     <div class="cart-subtotal">
       <div class="subtotal-info">
         <h3>Subtotal</h3>
-        <p class="subtotal">{{ this.getTotal() | currency : "USD" }}</p>
+        <p class="subtotal">{{ this.getTotal() | currency : "NGN": "symbol" }}</p>
       </div>
       <form (ngSubmit)="onCheckout()" #checkoutForm="ngForm">
         <div class="m-3 p-3">
