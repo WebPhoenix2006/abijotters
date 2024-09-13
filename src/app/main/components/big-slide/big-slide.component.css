@@ -20,6 +20,7 @@
 
 #hero .btn-container .btn:hover {
   background: var(--clr-dark-blue);
+  color: #fff;
   border-color: var(--clr-dark-blue);
 }
 
