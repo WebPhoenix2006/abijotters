@@ -1,0 +1,82 @@
+<div class="slider-wrapper">
+  <button class="slide-arrow" id="slide-arrow-prev" (click)="slideLeft()">
+    <fa-icon [icon]="faChevronLeft"></fa-icon>
+  </button>
+  <button class="slide-arrow" id="slide-arrow-next" (click)="slideRight()">
+    <fa-icon [icon]="faChevronRight"></fa-icon>
+  </button>
+  <div id="slides-container" class="slides-container">
+    <div class="slide">
+      <!-- Hero -->
+      <section id="hero" class="content">
+        <!-- Background Image -->
+        <div class="item">
+          <div class="item__img-wrap">
+            <div class="item__img item__img--t1"></div>
+          </div>
+        </div>
+        <div class="section-wrapper">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="hero-title">
+                <p class="lead" data-aos="fade-up">
+                  <span
+                    class="animate__animated animate__fadeIn animate__delay-1s animate__faster"
+                  >
+                    Quality.
+                  </span>
+                  <span
+                    class="animate__animated animate__fadeIn animate__delay-2s animate__faster"
+                  >
+                    Durable.
+                  </span>
+                  <span
+                    class="animate__animated animate__fadeIn animate__delay-3s animate__faster"
+                  >
+                    Elegant.
+                  </span>
+                </p>
+                <h1 class="text-dark" data-aos="fade-up" data-aos-delay="100">
+                  The best Jotter in the city
+                </h1>
+              </div>
+              <div
+                class="btn-container"
+                data-aos="fade-up"
+                data-aos-delay="150"
+              >
+                <button routerLink="/shop/product/1" class="btn order-btn">
+                  <span class="text-dark">Buy Jotter</span>
+                  <fa-icon
+                    class="icon-accent"
+                    [icon]="faChevronRight"
+                  ></fa-icon>
+                </button>
+              </div>
+            </div>
+            <div
+              class="col-md-6 d-flex align-items-center justify-content-center"
+            >
+              <img
+                src="../../../../assets/images/man-holding-notepad.png"
+                style="height: 650px"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div
+            (click)="scrollDown()"
+            class="scroll-down animate__animated animate__fadeIn"
+          >
+            <div class="mouse">
+              <div class="scroller"></div>
+            </div>
+            <p class="scroll-text text-dark">Discover</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+  </div>
+</div>

@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.shop.getAllProducts()
       .subscribe(data => {
-        const coffe = data.filter(item => item.type === 'Notebook' || item.type === 'Filter');
+        const coffe = data.filter(item => item.type === 'Notebook' || item.type === 'Notepad');
         this.products = coffe;
         this.products.splice(0, 3);
       })

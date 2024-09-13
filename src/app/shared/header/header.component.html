@@ -25,8 +25,8 @@
     </nav>
     <div class="nav-btn-container">
       <button (click)="this.cart.toggleCart()" class="btn cart-btn">
-        <fa-icon [icon]="faShoppingCart"></fa-icon>
-        <p class="quantity text-light">
+        <fa-icon [icon]="faShoppingCart" class="text-dark"></fa-icon>
+        <p class="quantity">
           <span *ngIf="this.cart.cartQuantity >= 1; else empty">{{
             this.cart.cartQuantity
           }}</span>

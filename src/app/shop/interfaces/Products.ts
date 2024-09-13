@@ -14,8 +14,7 @@ export interface Image {
 }
 
 export enum Type {
-    Espresso = "Notebook",
-    Filter = "Filter",
-    Merchandise = "Merchandise",
+    Notebook = "Notebook",
+    Notepad = "Notepad",
 }
 

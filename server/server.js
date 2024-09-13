@@ -67,7 +67,7 @@ app.post("/create-payment/:id", async (req, res) => {
 });
 app.use(errorHandler)
 
-app.listen(4242, () => console.log("Server running on port 4242"));
+app.listen(4242, () => console.log("Server running on port 4242!"));
 
 function errorHandler(err, req, res, next) {
     if (err instanceof HandlerError) {

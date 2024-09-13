@@ -9,6 +9,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { RouterModule } from '@angular/router';
 import { ShopModule } from '../shop/shop.module';
 import { MainRoutingModule } from './main-routing.module';
+import { BigSlideComponent } from './components/big-slide/big-slide.component';
 
 
 
@@ -18,6 +19,7 @@ import { MainRoutingModule } from './main-routing.module';
     AboutComponent,
     ContactComponent,
     SliderComponent,
+    BigSlideComponent,
   
   ],
   exports: [

@@ -1,31 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { Product } from 'src/app/shop/interfaces/Products';
-import { ShopService } from 'src/app/shop/services/shop.service';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css']
+  selector: 'app-big-slide',
+  templateUrl: './big-slide.component.html',
+  styleUrls: ['./big-slide.component.css']
 })
-export class SliderComponent implements OnInit {
+export class BigSlideComponent implements OnInit {
   faChevronRight = faChevronRight;
   faChevronLeft = faChevronLeft;
-  products: Product[] = [];
-
-  constructor(private shop: ShopService) {
-
-   }
+  constructor() { }
 
   ngOnInit(): void {
-    this.shop.getAllProducts()
-      .subscribe(data => {
-        const coffe = data.filter(item => item.type === 'Notebook' || item.type === 'Notepad');
-        this.products = coffe;
-        this.products.splice(0, 3);
-      })
   }
-
   slideLeft() {
     const slidesContainer = document.getElementById("slides-container") as HTMLElement;
     const slide = document.querySelector(".slide") as HTMLElement;
@@ -46,5 +33,8 @@ export class SliderComponent implements OnInit {
       slidesContainer.scrollLeft += slideWidth;
     });
   }
-
+  scrollDown() {
+    const target = document.querySelector('#products') as HTMLElement;
+    window.scrollTo(0, target.offsetTop);
+  }
 }

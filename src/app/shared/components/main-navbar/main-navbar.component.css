@@ -15,7 +15,7 @@
 }
 
 .navigation .nav-item:hover .nav-link {
-	color: var(--clr-orange-accent);
+	color: var(--clr-dark-orange-accent);
 	transition: color ease 0.2s;
 }
 

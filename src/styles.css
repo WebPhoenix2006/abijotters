@@ -1,6 +1,5 @@
 /* Fonts: 'Nunito', 'Oswald; Weight: 300, 400, 500,700 */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Oswald:wght@400;500;600;700&display=swap");
-/* @import url('~bootstrap/dist/css/bootstrap.min.css'); */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); /* @import url('~bootstrap/dist/css/bootstrap.min.css'); */
 :root {
   --clr-dark-blue: #ff0000;
   --clr-dark: #ff2525;
@@ -12,8 +11,8 @@
   --clr-orange-accent: #000000;
   --clr-dark-orange-accent: #ff25259a;
 
-  --ff-body: "Laila", sans-serif;
-  --ff-heading: "Manrope", sans-serif;
+  --ff-body: "Roboto", sans-serif;
+  --ff-heading: "Roboto", sans-serif;
 
   --fs-small: 0.85rem;
   --fs-regular: 1.15rem;

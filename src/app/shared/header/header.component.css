@@ -6,7 +6,7 @@
 	width: 100%;
 	height: auto;
 	z-index: 3;
-	padding: 1rem 0 0 0;
+	/* padding: 1rem 0 0 0; */
 	overflow-x: hidden;
 }
 
@@ -48,7 +48,7 @@
 	width: 25px;
 	height: 25px;
 	border-radius: 5rem;
-	background: var(--clr-orange-accent);
+	background: var(--clr-dark-blue);
 }
 
 .nav-toggle {
