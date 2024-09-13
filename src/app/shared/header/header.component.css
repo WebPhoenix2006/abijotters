@@ -62,7 +62,7 @@
 	height: 2.5px;
 	width: 100%;
 	margin: 7px 0;
-	background: var(--clr-white);
+	background: var(--clr-dark);
 	position: absolute;
 	transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
 	z-index: 5;
