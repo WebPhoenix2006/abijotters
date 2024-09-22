@@ -47,8 +47,14 @@ export class ViewProductComponent implements OnInit {
   }
 
   addToCart(product: Product) {
+    // Ensure you pass the updated quantity from the input
+    product.quantity = +this.counterdisplay.nativeElement.value;
+    
     this.cart.addProduct(product);
+  
+    
   }
+  
 
   // Quantity Controls
   add() {
@@ -60,8 +66,7 @@ export class ViewProductComponent implements OnInit {
       this.productData.quantity--;
     }
   }
-  editQuant(){
-    console.log('+')
-    this.productData.quantity = this.counterdisplay.nativeElement.value;
-  }
+  // editQuant(){
+    
+  // }
 }

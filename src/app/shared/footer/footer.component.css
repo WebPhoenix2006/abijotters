@@ -21,7 +21,7 @@
 #main-footer .row .footer-text,
 #main-footer .row a {
 	color: var(--clr-grey);
-	text-transform: uppercase;
+	text-transform: lowercase;
 }
 
 #main-footer .row h4 {

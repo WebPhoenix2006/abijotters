@@ -11,7 +11,7 @@
                 <p class="type">{{ productData.type | uppercase }}</p>
                 <h2 class="text-dark">{{ productData.name }}</h2>
                 <p class="price text-accent">{{ productData.price  | currency: "NGN":"symbol"}}</p>
-                <p class="description text-dark">{{ productData.description }}</p>
+                <p class="description text-darker">{{ productData.description }}</p>
 
                 
 
@@ -20,7 +20,7 @@
                     <div class="counter-inner">
                         <div class="counter">
                             <button class="counter-btn" (click)="remove()" type="button">-</button>
-                            <input type="number" class="counter-display" style="border: 0;" (keyup)="editQuant()" #counterdisplay id="counter-display" [value]="productData.quantity">
+                            <input type="number" class="counter-display" style="border: 0;"  #counterdisplay id="counter-display" [value]="productData.quantity">
                             <button class="counter-btn" (click)="add()" type="button">+</button>
                         </div>
                         <button class="btn cta-btn" (click)="addToCart(productData)">Add to cart</button>

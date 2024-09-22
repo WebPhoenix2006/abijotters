@@ -17,6 +17,7 @@
 .description {
     font-size: var(--fs-medium);
     padding: 2rem 0 0 0;
+    color: var(--clr-darker);
 }
 
 .product-list {

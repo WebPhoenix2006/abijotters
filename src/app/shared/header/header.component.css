@@ -49,6 +49,7 @@
 	height: 25px;
 	border-radius: 5rem;
 	background: var(--clr-dark-blue);
+	color: #fff;
 }
 
 .nav-toggle {

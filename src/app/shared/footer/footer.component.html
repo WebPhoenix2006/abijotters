@@ -1,64 +1,91 @@
 <!-- Main Footer -->
 <section id="main-footer" class="bg-dark">
-    <div class="section-wrapper row">
-        <div class="col">
-            <figure class="logo-container">
-                <img loading="lazy" routerLink="" src="./assets/logo/logo.png" alt="" class="logo">
-                <figcaption>
-                    <p class="lead">Quality<span style="color: #000;">.</span> Durable<span style="color: #000;">.</span> Elegant<span style="color: #000;">.</span></p>
-                </figcaption>
-            </figure>
-        </div>
-        <div class="col">
-            <h3 style="color: #000;">Find Us</h3>
-            <ul class="location-list">
-                <li>
-                    <p class="text-light">190/192 Ikorodu Road, <br> Beside First Bank Palmgrove, Lagos</p>
-                </li>
-                
-            </ul>
-        </div>
-        <div class="col">
-            <h3 style="color: #000;">Support</h3>
-            <ul class="footer-nav">
-                
-                <li class="nav-item">
-                    <a routerLink="/shop/product/1" class="nav-link">Product</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a routerLink="" class="nav-link">Privacy Policy</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-            <h3 style="color: #000;"> Contact Us</h3>
-            <p class="footer-text">09015526946 | 08104587770</p>
-            <p class="footer-text">abifortunejotters&#64;gmail.com</p>
-            <div class="social-media-wrapper">
-                <h3 class="text-light">Follow Us</h3>
-                <ul class="social-media-list">
-                    <p class="text-center">Abifortune.jotters</p>
-                    <li class="social-media-icon">
-                        <fa-icon [icon]="faFacebook"></fa-icon>
-                    </li>
-                    <li class="social-media-icon">
-                        <fa-icon [icon]="faInstagram"></fa-icon>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <div class="section-wrapper row">
+    <div class="col">
+      <figure class="logo-container">
+        <img
+          loading="lazy"
+          routerLink=""
+          src="./assets/logo/logo.png"
+          alt=""
+          class="logo"
+        />
+        <figcaption>
+          <p class="lead">
+            Quality<span style="color: #000">.</span> Durable<span
+              style="color: #000"
+              >.</span
+            >
+            Elegant<span style="color: #000">.</span>
+          </p>
+        </figcaption>
+      </figure>
     </div>
+    <div class="col">
+      <h3 style="color: #000">Find Us</h3>
+      <ul class="location-list">
+        <li>
+          <p class="text-light">
+            190/192 Ikorodu Road, <br />
+            Beside First Bank Palmgrove, Lagos
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="social-media-wrapper">
+        <h3 class="text-darker">Follow Us</h3>
+        <ul class="social-media-list">
+          <p class="text-center">Abifortune.jotters</p>
+          <li class="social-media-icon">
+            <fa-icon [icon]="faFacebook"></fa-icon>
+          </li>
+          <li class="social-media-icon">
+            <fa-icon [icon]="faInstagram"></fa-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <h3 style="color: #000">Contact Us</h3>
+      <p class="footer-text">09015526946 | 08104587770</p>
+      <p class="footer-text">abifortunejotters&#64;gmail.com</p>
+    </div>
+  </div>
 </section>
 
 <!-- Footer -->
 <footer id="sub-footer" class="bg-darker text-light">
-    <div class="section-wrapper">
-        <p class="copyright">Copyright &copy; 2021 -  {{ today | date }} Abi Fortune Jotters. All rights reserved.</p>
-        <figure class="payment-wrapper">
-            <img loading="lazy" src="./assets/images/mastercard.png" alt="" width="35" height="35" class="payment-icon">
-            <img loading="lazy" src="./assets/images/visa.png" alt="" width="35" height="35"  class="payment-icon">
-            <img loading="lazy" src="./assets/images/amex.png" alt="" width="35" height="35"  class="payment-icon">
-        </figure>
-    </div>
+  <div class="section-wrapper">
+    <p class="copyright">
+      Copyright &copy; 2021 - {{ today | date }} Abi Fortune Jotters. All rights
+      reserved.
+    </p>
+    <figure class="payment-wrapper">
+      <img
+        loading="lazy"
+        src="./assets/images/mastercard.png"
+        alt=""
+        width="35"
+        height="35"
+        class="payment-icon"
+      />
+      <img
+        loading="lazy"
+        src="./assets/images/visa.png"
+        alt=""
+        width="35"
+        height="35"
+        class="payment-icon"
+      />
+      <img
+        loading="lazy"
+        src="./assets/images/amex.png"
+        alt=""
+        width="35"
+        height="35"
+        class="payment-icon"
+      />
+    </figure>
+  </div>
 </footer>
